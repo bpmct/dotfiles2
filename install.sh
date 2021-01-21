@@ -42,3 +42,9 @@ fi
 echo -e "⤵ Changing the default shell"
 sudo chsh -s $(which zsh) $USER
 echo -e "✅ Successfully modified the default shell"
+
+# Copy bashrc if it doesn't exist
+FILE=~/.bashrc
+if [ ! -f "$FILE" ]; then
+    cp ~/dotfiles/.bashrc ~/.bashrc
+fi
